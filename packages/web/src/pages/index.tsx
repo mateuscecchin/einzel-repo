@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { AGUA } from "@monorepo/core"
+import { AGUA } from "@einzel-repo/core"
 
 const inter = Inter({ subsets: ['latin'] })
 
