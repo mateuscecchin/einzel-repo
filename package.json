@@ -1,0 +1,13 @@
+{
+  "name": "einzel-repo",
+  "private": "true",
+  "version": "1.0.0",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "main": "index.js",
+  "author": "MateusCecchin <mateusfernandescn@gmail.com>",
+  "license": "MIT"
+}
