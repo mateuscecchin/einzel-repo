@@ -4,11 +4,14 @@ import CardBlur from "../../../assets/blur-card.png"
 import TitleBlur from "../../../assets/blur-title.png"
 import { LinearGradient } from "expo-linear-gradient";
 import { einzelInfo } from "@einzel-repo/core";
+import { useEffect, useState } from "react";
+import Api, { IMessage } from "../../services/Api";
 
 const START_LINEAR_GRADIENT = { x: 0.3, y: 0.2 }
 const END_LINEAR_GRADIENT = { x: 1, y: 0.3 }
 
 export function HomeScreen() {
+    const [message, setMessage] = useState<IMessage>()
     const spinValue = new Animated.Value(0);
 
     Animated.loop(
@@ -26,6 +29,21 @@ export function HomeScreen() {
         outputRange: ["0deg", "360deg"],
     });
 
+    async function fetchMessage() {
+        try {
+
+            const res = await Api.fetchMessage()
+            setMessage(res.data)
+        } catch (error) {
+            console.log("error", error)
+        }
+    }
+
+    useEffect(() => {
+        fetchMessage()
+    }, [])
+
+
     return (
         <View className="bg-zinc-900 h-screen">
             <MaskedView
@@ -33,7 +51,7 @@ export function HomeScreen() {
                     <View className="flex-1 justify-center">
                         <ImageBackground source={TitleBlur} resizeMode="stretch" className="w-96 h-52 self-center bg absolute -z-20" />
                         <Text className="font-black text-6xl text-center">
-                            {einzelInfo.title}
+                            {message?.title}
                         </Text>
                     </View>
                 }
@@ -74,7 +92,7 @@ export function HomeScreen() {
                 >
 
                     <Text className="text-violet-200 text-xl font-medium mb-4">What is that ?</Text>
-                    <Text className="text-violet-200 text-base font-regular">{einzelInfo.description}</Text>
+                    <Text className="text-violet-200 text-base font-regular">{message?.description}</Text>
                 </View>
             </View>
         </View>

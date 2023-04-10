@@ -1,4 +1,3 @@
-
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, Text, View } from 'react-native';
 import { HomeScreen } from './src/Screens/HomeScreen';

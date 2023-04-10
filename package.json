@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev:mobile": "yarn workspace einzel-mobile start",
-    "dev:web": "yarn workspace einzel-web dev"
+    "dev:web": "yarn workspace einzel-web dev",
+    "dev:server": "yarn workspace einzel-server json-server --watch src/db.json"
   },
   "workspaces": {
     "packages": [

@@ -13,7 +13,6 @@
     "expo": "~48.0.10",
     "expo-linear-gradient": "~12.1.2",
     "expo-status-bar": "~1.4.4",
-    "metro-config": "^0.76.1",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "0.71.6"
