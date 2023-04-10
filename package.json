@@ -2,9 +2,14 @@
   "name": "einzel-repo",
   "private": "true",
   "version": "1.0.0",
+  "scripts": {
+    "dev:mobile": "yarn workspace einzel-mobile start",
+    "dev:web": "yarn workspace einzel-web dev"
+  },
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "apps/*"
     ]
   },
   "main": "index.js",

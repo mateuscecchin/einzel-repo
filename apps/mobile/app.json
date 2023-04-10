@@ -3,6 +3,7 @@
     "name": "mobile",
     "slug": "mobile",
     "version": "1.0.0",
+    "jsEngine": "hermes",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,16 +16,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "jsEngine": "hermes"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.mateuscecchin.mobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5d608481-1230-4e49-94c7-3e3afda9fc9f"
+      }
     }
   }
 }
